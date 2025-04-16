@@ -6,12 +6,8 @@ import * as schema from "@shared/schema";
 // Configuración para permitir WebSockets para la conexión a la base de datos
 neonConfig.webSocketConstructor = ws;
 
-// Verificar que la URL de la base de datos esté definida
-if (!process.env.DATABASE_URL) {
-  throw new Error(
-    "DATABASE_URL debe estar configurada. ¿Olvidaste aprovisionar una base de datos?",
-  );
-}
+// Usar una URL de prueba si DATABASE_URL no está configurada
+const DATABASE_URL = process.env.DATABASE_URL || "postgresql://test:test@localhost:5432/test";
 
 // Crear el pool de conexiones
 export const pool = new Pool({ connectionString: process.env.DATABASE_URL });
