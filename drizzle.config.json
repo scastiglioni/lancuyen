@@ -1,0 +1,10 @@
+{
+  "silent": true,
+  "out": "./drizzle",
+  "dialect": "pg",
+  "schema": "./shared/schema.ts",
+  "driver": "@neondatabase/serverless",
+  "dbCredentials": {
+    "connectionString": "postgresql://neondb_owner:npg_aZqS8Mveys6t@ep-shy-mode-a5fddqcn.us-east-2.aws.neon.tech/neondb?sslmode=require"
+  }
+}
